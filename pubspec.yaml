@@ -39,6 +39,7 @@ dependencies:
   animated_text_kit: ^4.2.2
   video_player: ^2.2.4
   carousel_slider: ^4.0.0
+  ionicons: ^0.2.1
 
 dev_dependencies:
   flutter_test:

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tikodc/pages/inscription.dart';
 
 class UserProfilPage extends StatelessWidget {
   const UserProfilPage({Key? key}) : super(key: key);
@@ -12,10 +13,10 @@ class UserProfilPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Profil', style: TextStyle(color: Colors.black)),
+        title: Text('Profil', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: Icon(Icons.person_add, color: Colors.black),
+        //leading: Icon(Icons.person_add, color: Colors.black),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 12.0),
@@ -29,15 +30,21 @@ class UserProfilPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
+          SizedBox(height: 30),
 
 
           //profile photo
           Container(
-            height: 120,
-            width: 120,
+            height: 100,
+            width: 100,
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
               color: Colors.grey[200],
+            ),
+            child: Icon(
+                Icons.camera_alt,
+                color: Colors.black,
+              size: 40,
             ),
           ),
 
@@ -192,7 +199,7 @@ void _openPopup(context){
                         GestureDetector(onTap: () => Navigator.pop(context),
                           child: Icon(Icons.close, color: Colors.black),
                         ),
-                        Icon(Icons.more, color: Colors.black),
+                        Icon(Icons.help_outline_sharp, color: Colors.black),
                       ],
                     ),
 
@@ -224,7 +231,13 @@ void _openPopup(context){
                     ButtonTheme(
                       minWidth: 250.0,
                       child: RaisedButton(
-                        onPressed: () => {},
+                        onPressed: () => {
+                        Navigator.of(context).push(
+                        MaterialPageRoute(
+                        builder: (context) => const inscription(),
+                        ),
+                        ),
+                        },
                         elevation: 0.0,
                         shape: RoundedRectangleBorder(
                             side: BorderSide(
@@ -241,8 +254,13 @@ void _openPopup(context){
                             children: <Widget>[
                               Expanded(
                                 flex: 1,
-                                child: FaIcon(
-                                    FontAwesomeIcons.user
+                                child: /*Icon(
+                                    Icons.person_outline,
+                                    color: Colors.black
+                                ),*/
+                                FaIcon(
+                                    FontAwesomeIcons.user,
+                                    color: Colors.black
                                 ),
                               ),
                               Expanded(
@@ -485,7 +503,7 @@ void _openPopupConnect(context){
                         GestureDetector(onTap: () => Navigator.pop(context),
                           child: Icon(Icons.close, color: Colors.black),
                         ),
-                        Icon(Icons.more, color: Colors.black),
+                        Icon(Icons.help_outline_sharp, color: Colors.black),
                       ],
                     ),
                     SizedBox(
@@ -495,6 +513,7 @@ void _openPopupConnect(context){
                       "Connecte-toi à TikTok",
                       style: TextStyle(
                         fontSize: 25,
+                        color: Colors.black
                       ),
                     ),
                     SizedBox(
@@ -536,7 +555,8 @@ void _openPopupConnect(context){
                               Expanded(
                                 flex: 1,
                                 child: FaIcon(
-                                    FontAwesomeIcons.user
+                                    FontAwesomeIcons.user,
+                                    color: Colors.black
                                 ),
                               ),
                               Expanded(

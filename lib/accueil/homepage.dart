@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
         onTap: _navigateBottomBar,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Accueil"),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Recherche"),
+          BottomNavigationBarItem(icon: Icon(Icons.flash_on_outlined), label: "Recherche"),
           BottomNavigationBarItem(icon: Image.asset('assets/images/tiktok_add.png', height: 25,), label: ""),
           BottomNavigationBarItem(icon: Icon(Icons.chat), label: "Boite de réception"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profil"),
