@@ -13,17 +13,15 @@ class UserProfilPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Profil', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+        title: Text('Profil',
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
         backgroundColor: Colors.transparent,
         elevation: 0,
         //leading: Icon(Icons.person_add, color: Colors.black),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 12.0),
-            child: Icon(
-                Icons.menu,
-                color: Colors.black
-            ),
+            child: Icon(Icons.menu, color: Colors.black),
           )
         ],
       ),
@@ -32,135 +30,133 @@ class UserProfilPage extends StatelessWidget {
         children: [
           SizedBox(height: 30),
 
-
           //profile photo
           Container(
             height: 100,
             width: 100,
             decoration: BoxDecoration(
-                shape: BoxShape.circle,
+              shape: BoxShape.circle,
               color: Colors.grey[200],
             ),
             child: Icon(
-                Icons.camera_alt,
-                color: Colors.black,
+              Icons.camera_alt,
+              color: Colors.black,
               size: 40,
             ),
           ),
 
           // nomUtilisateur
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text("@nomd'utilisateur",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20
-                ),
-              ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text(
+              "@nomd'utilisateur",
+              style: TextStyle(color: Colors.black, fontSize: 20),
             ),
+          ),
 
           // numbre de followers, likes
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Container(
-                      alignment: Alignment.centerRight,
-                      child: Column(
-                        children: [
-                      Text('0',
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Container(
+                  alignment: Alignment.centerRight,
+                  child: Column(
+                    children: [
+                      Text(
+                        '0',
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
-                            fontSize: 15
+                            fontSize: 15),
+                      ),
+                      Text(
+                        'Suivis',
+                        style: TextStyle(
+                          color: Colors.black,
                         ),
                       ),
-                      Text('Suivis',
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(width: 20),
+              Expanded(
+                child: Container(
+                  child: Column(
+                    children: [
+                      Text(
+                        '0',
                         style: TextStyle(
                             color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                      ),
+                      Text(
+                        'Followers',
+                        style: TextStyle(
+                          color: Colors.black,
                         ),
                       ),
-                        ],
-                      ),
-                    ),
+                    ],
                   ),
-                  Expanded(
-                    child: Container(
-                      child: Column(
-                        children: [
-                          Text('0',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15
-                            ),
-                          ),
-                          Text('Followers',
-                            style: TextStyle(
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      alignment: Alignment.centerLeft,
-                      child: Column(
-                        children: [
-                          Text('0',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15
-                            ),
-                          ),
-                          SizedBox(height: 5),
-                          Text("J'aime",
-                            style: TextStyle(
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                ],
+                ),
               ),
+              SizedBox(width: 20),
+              Expanded(
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    children: [
+                      Text(
+                        '0',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        "J'aime",
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
           SizedBox(
             height: 80,
           ),
-
-      Row(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          const SizedBox(width: 20.0, height: 100.0),
-          DefaultTextStyle(
-            style: const TextStyle(
-              fontSize: 25.0,
-              fontFamily: 'Horizon',
-            ),
-            child: AnimatedTextKit(
-              animatedTexts: [
-                RotateAnimatedText('Retrouve tes favorites'),
-                RotateAnimatedText('Consulte tes suivis'),
-                RotateAnimatedText('Exprime ta créativité'),
-              ],
-
-            ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const SizedBox(width: 20.0, height: 100.0),
+              DefaultTextStyle(
+                style: const TextStyle(
+                  fontSize: 25.0,
+                  fontFamily: 'Horizon',
+                  color: Colors.black
+                ),
+                child: AnimatedTextKit(
+                  animatedTexts: [
+                    RotateAnimatedText('Retrouve tes favorites'),
+                    RotateAnimatedText('Consulte tes suivis'),
+                    RotateAnimatedText('Exprime ta créativité'),
+                  ],
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
           SizedBox(
             width: 300.0,
             height: 40,
             child: Builder(
               builder: (context) => RaisedButton(
-                onPressed: () =>{
-                  _openPopup(context)
-                },
+                onPressed: () => {_openPopup(context)},
                 color: Colors.red,
                 textColor: Colors.white,
                 child: Text("Connecte-toi ou inscris-toi"),
@@ -172,7 +168,6 @@ class UserProfilPage extends StatelessWidget {
           // bio
 
           // default tab controller
-
         ],
       ),
     );
@@ -180,12 +175,12 @@ class UserProfilPage extends StatelessWidget {
 }
 
 //POPUP D'INSCRIPTION
-void _openPopup(context){
+void _openPopup(context) {
   showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.white,
-      builder: (BuildContext bc){
+      builder: (BuildContext bc) {
         return Container(
             height: MediaQuery.of(context).size.height * .95,
             child: Padding(
@@ -193,61 +188,54 @@ void _openPopup(context){
               child: Center(
                 child: Column(
                   children: <Widget>[
+                    SizedBox(height: 30),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        GestureDetector(onTap: () => Navigator.pop(context),
+                        GestureDetector(
+                          onTap: () => Navigator.pop(context),
                           child: Icon(Icons.close, color: Colors.black),
                         ),
                         Icon(Icons.help_outline_sharp, color: Colors.black),
                       ],
                     ),
-
+                    SizedBox(height: 50),
                     Text(
                       "Inscription à TikTok",
-                      style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.black
-                      ),
+                      style: TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
                       height: 10.0,
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(18.0, 0.0, 18.0, 0.0),
+                      padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
                       child: Text(
                         "Crée un profif, abonne-toi à d’autres comptes, "
-                            "crée tes propres vidéos et bien plus encore.",
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.black54
-                        ),
+                        "crée tes propres vidéos et bien plus encore.",
+                        style: TextStyle(fontSize: 14.5, color: Colors.black54),
                         textAlign: TextAlign.center,
                       ),
                     ),
                     SizedBox(
-                      height: 10.0,
+                      height: 20.0,
                     ),
                     ButtonTheme(
                       minWidth: 250.0,
                       child: RaisedButton(
                         onPressed: () => {
-                        Navigator.of(context).push(
-                        MaterialPageRoute(
-                        builder: (context) => const inscription(),
-                        ),
-                        ),
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const inscription(),
+                            ),
+                          ),
                         },
                         elevation: 0.0,
                         shape: RoundedRectangleBorder(
-                            side: BorderSide(
-                                color: Colors.grey,
-                                width: 0.5
-                            )
-                        ),
+                            side: BorderSide(color: Colors.grey, width: 0.5)),
                         color: Colors.white,
                         child: Padding(
-                          padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                          padding:
+                              const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
@@ -258,19 +246,15 @@ void _openPopup(context){
                                     Icons.person_outline,
                                     color: Colors.black
                                 ),*/
-                                FaIcon(
-                                    FontAwesomeIcons.user,
-                                    color: Colors.black
-                                ),
+                                    FaIcon(FontAwesomeIcons.user,
+                                        color: Colors.black),
                               ),
                               Expanded(
-                                flex: 2,
+                                flex: 6,
                                 child: Text(
                                   "Utiliser téléphone/e-mail/nom d’utilisateur",
                                   style: TextStyle(
-                                      fontSize: 15.0,
-                                      color: Colors.black87
-                                  ),
+                                      fontSize: 15.0, color: Colors.black87),
                                 ),
                               ),
                             ],
@@ -287,14 +271,11 @@ void _openPopup(context){
                         onPressed: () => {},
                         elevation: 0.0,
                         shape: RoundedRectangleBorder(
-                            side: BorderSide(
-                                color: Colors.grey,
-                                width: 0.5
-                            )
-                        ),
+                            side: BorderSide(color: Colors.grey, width: 0.5)),
                         color: Colors.white,
                         child: Padding(
-                          padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                          padding:
+                              const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
@@ -311,9 +292,7 @@ void _openPopup(context){
                                 child: Text(
                                   "Continuer avec Facebook",
                                   style: TextStyle(
-                                      fontSize: 15.0,
-                                      color: Colors.black87
-                                  ),
+                                      fontSize: 15.0, color: Colors.black87),
                                 ),
                               ),
                             ],
@@ -330,14 +309,11 @@ void _openPopup(context){
                         onPressed: () => {},
                         elevation: 0.0,
                         shape: RoundedRectangleBorder(
-                            side: BorderSide(
-                                color: Colors.grey,
-                                width: 0.5
-                            )
-                        ),
+                            side: BorderSide(color: Colors.grey, width: 0.5)),
                         color: Colors.white,
                         child: Padding(
-                          padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                          padding:
+                              const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
@@ -354,9 +330,7 @@ void _openPopup(context){
                                 child: Text(
                                   "Continuer avec Google",
                                   style: TextStyle(
-                                      fontSize: 15.0,
-                                      color: Colors.black87
-                                  ),
+                                      fontSize: 15.0, color: Colors.black87),
                                 ),
                               ),
                             ],
@@ -373,14 +347,11 @@ void _openPopup(context){
                         onPressed: () => {},
                         elevation: 0.0,
                         shape: RoundedRectangleBorder(
-                            side: BorderSide(
-                                color: Colors.grey,
-                                width: 0.5
-                            )
-                        ),
+                            side: BorderSide(color: Colors.grey, width: 0.5)),
                         color: Colors.white,
                         child: Padding(
-                          padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                          padding:
+                              const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
@@ -397,17 +368,13 @@ void _openPopup(context){
                                 child: Text(
                                   "Continuer avec Twitter",
                                   style: TextStyle(
-                                      fontSize: 15.0,
-                                      color: Colors.black87
-                                  ),
+                                      fontSize: 15.0, color: Colors.black87),
                                 ),
                               ),
-
                             ],
                           ),
                         ),
                       ),
-
                     ),
                     SizedBox(
                       height: 15.0,
@@ -418,14 +385,11 @@ void _openPopup(context){
                         onPressed: () => {},
                         elevation: 0.0,
                         shape: RoundedRectangleBorder(
-                            side: BorderSide(
-                                color: Colors.grey,
-                                width: 0.5
-                            )
-                        ),
+                            side: BorderSide(color: Colors.grey, width: 0.5)),
                         color: Colors.white,
                         child: Padding(
-                          padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                          padding:
+                              const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
@@ -442,25 +406,36 @@ void _openPopup(context){
                                 child: Text(
                                   "Continuer avec Instagram",
                                   style: TextStyle(
-                                      fontSize: 15.0,
-                                      color: Colors.black87
-                                  ),
+                                      fontSize: 15.0, color: Colors.black87),
                                 ),
                               ),
-
                             ],
                           ),
                         ),
                       ),
-
                     ),
                     SizedBox(
-                      height: 90.0,
+                      height: 50.0,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("En continuant, tu acceptes nos Conditions d’utilisation et reconais "
+                            "avoir lu notre Politique de confidentialité pour savoir comment nous "
+                            "collectons, utilisons et partageons tes données.",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.black45
+                          ),
+                        ),
+                    ),
+                    SizedBox(
+                      height: 40.0,
                     ),
                     RichText(
                       text: TextSpan(
                         text: "Tu as déjà un compte ? ",
-                        style: TextStyle( color: Colors.black),
+                        style: TextStyle(color: Colors.black),
                         children: <TextSpan>[
                           TextSpan(
                               text: 'Connexion ',
@@ -477,14 +452,12 @@ void _openPopup(context){
                   ],
                 ),
               ),
-            )
-        );
-      }
-  );
+            ));
+      });
 }
 
 //POPUP DE CONNEXION
-void _openPopupConnect(context){
+/*void _openPopupConnect(context){
   showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -777,5 +750,271 @@ void _openPopupConnect(context){
         );
       }
   );
-}
+}*/
 
+//POPUP CONNEXION NEW
+void _openPopupConnect(context) {
+  showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.white,
+      builder: (BuildContext bc) {
+        return Container(
+            height: MediaQuery.of(context).size.height * .95,
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Center(
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(height: 30),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        GestureDetector(
+                          onTap: () => Navigator.pop(context),
+                          child: Icon(Icons.close, color: Colors.black),
+                        ),
+                        Icon(Icons.help_outline_sharp, color: Colors.black),
+                      ],
+                    ),
+                    SizedBox(height: 50),
+                    Text(
+                      "Connecte-toi à TikTok",
+                      style: TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
+                      child: Text(
+                        "Gère ton compte, consulte les notifications, "
+                        "commente des vidéos et bien plus encore.",
+                        style: TextStyle(fontSize: 14.5, color: Colors.black54),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    ButtonTheme(
+                      minWidth: 250.0,
+                      child: RaisedButton(
+                        onPressed: () => {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const inscription(),
+                            ),
+                          ),
+                        },
+                        elevation: 0.0,
+                        shape: RoundedRectangleBorder(
+                            side: BorderSide(color: Colors.grey, width: 0.5)),
+                        color: Colors.white,
+                        child: Padding(
+                          padding:
+                              const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Expanded(
+                                flex: 1,
+                                child: /*Icon(
+                                    Icons.person_outline,
+                                    color: Colors.black
+                                ),*/
+                                    FaIcon(FontAwesomeIcons.user,
+                                        color: Colors.black),
+                              ),
+                              Expanded(
+                                flex: 6,
+                                child: Text(
+                                  "Utiliser téléphone/e-mail/nom d’utilisateur",
+                                  style: TextStyle(
+                                      fontSize: 15.0, color: Colors.black87),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15.0,
+                    ),
+                    ButtonTheme(
+                      minWidth: 250.0,
+                      child: RaisedButton(
+                        onPressed: () => {},
+                        elevation: 0.0,
+                        shape: RoundedRectangleBorder(
+                            side: BorderSide(color: Colors.grey, width: 0.5)),
+                        color: Colors.white,
+                        child: Padding(
+                          padding:
+                              const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Expanded(
+                                flex: 1,
+                                child: FaIcon(
+                                  FontAwesomeIcons.facebook,
+                                  color: Colors.blue,
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: Text(
+                                  "Continuer avec Facebook",
+                                  style: TextStyle(
+                                      fontSize: 15.0, color: Colors.black87),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15.0,
+                    ),
+                    ButtonTheme(
+                      minWidth: 250.0,
+                      child: RaisedButton(
+                        onPressed: () => {},
+                        elevation: 0.0,
+                        shape: RoundedRectangleBorder(
+                            side: BorderSide(color: Colors.grey, width: 0.5)),
+                        color: Colors.white,
+                        child: Padding(
+                          padding:
+                              const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Expanded(
+                                flex: 1,
+                                child: FaIcon(
+                                  FontAwesomeIcons.google,
+                                  color: Colors.red,
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: Text(
+                                  "Continuer avec Google",
+                                  style: TextStyle(
+                                      fontSize: 15.0, color: Colors.black87),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15.0,
+                    ),
+                    ButtonTheme(
+                      minWidth: 250.0,
+                      child: RaisedButton(
+                        onPressed: () => {},
+                        elevation: 0.0,
+                        shape: RoundedRectangleBorder(
+                            side: BorderSide(color: Colors.grey, width: 0.5)),
+                        color: Colors.white,
+                        child: Padding(
+                          padding:
+                              const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Expanded(
+                                flex: 1,
+                                child: FaIcon(
+                                  FontAwesomeIcons.twitter,
+                                  color: Colors.lightBlue,
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: Text(
+                                  "Continuer avec Twitter",
+                                  style: TextStyle(
+                                      fontSize: 15.0, color: Colors.black87),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15.0,
+                    ),
+                    ButtonTheme(
+                      minWidth: 250.0,
+                      child: RaisedButton(
+                        onPressed: () => {},
+                        elevation: 0.0,
+                        shape: RoundedRectangleBorder(
+                            side: BorderSide(color: Colors.grey, width: 0.5)),
+                        color: Colors.white,
+                        child: Padding(
+                          padding:
+                              const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Expanded(
+                                flex: 1,
+                                child: FaIcon(
+                                  FontAwesomeIcons.instagram,
+                                  color: Colors.red,
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: Text(
+                                  "Continuer avec Instagram",
+                                  style: TextStyle(
+                                      fontSize: 15.0, color: Colors.black87),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 200.0,
+                    ),
+                    RichText(
+                      text: TextSpan(
+                        text: "Tu as déjà un compte ? ",
+                        style: TextStyle(color: Colors.black),
+                        children: <TextSpan>[
+                          TextSpan(
+                              text: 'Inscription ',
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  _openPopup(context);
+                                },
+                              style: TextStyle(
+                                color: Colors.red,
+                              )),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ));
+      });
+}

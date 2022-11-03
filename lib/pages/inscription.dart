@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tikodc/pages/inscription_tel_mail.dart';
 
 class inscription extends StatelessWidget {
+  //DateTime? _chosenDateTime;
   const inscription({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +57,11 @@ class inscription extends StatelessWidget {
                 child: Builder(
                   builder: (context) => RaisedButton(
                     onPressed: () =>{
-
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const InscTelMail(),
+                        ),
+                      ),
                     },
                     color: Colors.red,
                     textColor: Colors.white,
@@ -62,6 +69,7 @@ class inscription extends StatelessWidget {
                   ),
                 ),
               ),
+
             ],
           ),
         ),
@@ -69,3 +77,6 @@ class inscription extends StatelessWidget {
     );
   }
 }
+
+
+
