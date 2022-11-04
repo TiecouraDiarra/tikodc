@@ -15,10 +15,11 @@ class inscription extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
+        backgroundColor: Colors.white,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios_rounded, color: Colors.black),
           onPressed: () => {
-            showDialog(
+            /*showDialog(
                 context: context,
                 builder: (BuildContext context){
                   return AlertDialog(
@@ -54,11 +55,12 @@ class inscription extends StatelessWidget {
                     ],
                   );
                 }
-            ),
+            ),*/
+            Navigator.of(context).pop(),
           }
-          //Navigator.of(context).pop(),
+
         ),
-        backgroundColor: Colors.white,
+
         title: const Text('Inscription', style: TextStyle(color: Colors.black),),
 
       ),
@@ -75,9 +77,9 @@ class inscription extends StatelessWidget {
                   //SizedBox(height: 30),
                   Column(
                     children: [
-                      Text("Quelle est ta date de \nnaissance ?", style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold)),
+                      Text("Quelle est ta date de \nnaissance ?", style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold)),
                       SizedBox(height: 15),
-                      Text("Ta date de naissance ne sera pas\n affichée publiquement.",style: TextStyle(color: Colors.black)),
+                      Text("Ta date de naissance ne sera pas\n affichée publiquement.",style: TextStyle(color: Colors.black, fontSize: 12,)),
                     ],
                   ),
                   //SizedBox(width: 150),

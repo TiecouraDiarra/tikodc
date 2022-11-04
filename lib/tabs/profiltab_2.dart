@@ -119,7 +119,7 @@ class _checState extends State<chec> {
                 "Reçois du contenu tendance, des newsletters, des \n"
                 "promotions, des recommandations et des mises à \n"
                 "jour du compte par e-mail.",
-                style: TextStyle(color: Colors.black, fontSize: 15),
+                style: TextStyle(color: Colors.black, fontSize: 10),
               ),
               SizedBox(height: 20),
             ],
