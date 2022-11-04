@@ -225,7 +225,7 @@ void _openPopup(context) {
                         onPressed: () => {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => const inscription(),
+                              builder: (context) => inscription(),
                             ),
                           ),
                         },
@@ -803,7 +803,7 @@ void _openPopupConnect(context) {
                         onPressed: () => {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => const inscription(),
+                              builder: (context) => inscription(),
                             ),
                           ),
                         },

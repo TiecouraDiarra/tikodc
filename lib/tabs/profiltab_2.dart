@@ -24,8 +24,8 @@ class SecondTab extends StatelessWidget {
                 hintStyle: TextStyle(
                   color: Colors.black38,
                 ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.transparent, width: 3.0),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black12, width: 3.0),
                 ),
                 suffixIcon: IconButton(
                   onPressed: () {
